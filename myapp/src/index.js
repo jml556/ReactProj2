@@ -1,17 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Input from './input'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const printVal = (val) => {
+    console.log(val)
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const App = () => {
+    return(
+        <div style={styles.containerStyles}>
+            <Input functionToPass={printVal}/>
+        </div>
+    )
+}
+
+const styles = {
+    containerStyles: {
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))
